@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="text-center">
+    <%= flash[:alert] %>
+  </div>
   <div class="container">
     <%= yield %>
   </div>
+  <nav class='navbar navbar-default' role='navigation' id="nav-footer">
+    <ul class='nav navbar-nav'>
+      <li><%= link_to "Lessons", lessons_path %></li>
+      <li></li>
+    </ul>
+  </nav>
 </body>
 </html>

@@ -10,6 +10,7 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
+      flash[:alert] = "YOU MADE A LESSON, WAY TO GO FRIEND"
       redirect_to lessons_path
     else
       render :new
