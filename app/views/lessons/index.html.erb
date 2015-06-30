@@ -1,0 +1,10 @@
+<% content_for(:title, "Lessons | PROGRAMAJAMA")  %>
+<h1>Lessons</h1>
+
+<ul>
+
+  <% @lessons.each do |lesson| %>
+    <li><%= link_to lesson.name, lessons_path(lesson) %></li>
+  <% end %>
+
+</ul>
