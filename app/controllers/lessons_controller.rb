@@ -22,7 +22,7 @@ class LessonsController < ApplicationController
   end
 
   private def lesson_params
-    params.require(:lesson).permit(:name, :body)
+    params.require(:lesson).permit(:name, :body, :order_number)
   end
 
 end
