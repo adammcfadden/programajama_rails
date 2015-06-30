@@ -35,6 +35,11 @@ class LessonsController < ApplicationController
   end
 
   def edit
+    sections = Section.all
+    @section_option_array = []
+    sections.each do |section|
+      @section_option_array.push([section.name, section.id])
+    end
     @lesson = Lesson.find(params[:id])
   end
 
@@ -46,7 +51,7 @@ class LessonsController < ApplicationController
   end
 
   private def lesson_params
-    params.require(:lesson).permit(:name, :body, :order_number)
+    params.require(:lesson).permit(:name, :body, :order_number, :video)
   end
 
 end

@@ -1,15 +1,16 @@
 <% content_for(:title, "Lessons | PROGRAMAJAMA")  %>
 <h1>Lessons</h1>
 
-<ul>
+<div class="panel panel-default">
 
+<ul class="list-group">
   <% @lessons.each do |lesson| %>
-    <li>
+    <li class="list-group-item">
       <%= lesson.order_number %> -
-      <%= link_to lesson.name, lesson_path(lesson) %> -
-      <%= link_to "Delete", lesson_path(lesson), data: {confirm: "YOU SURE DAWG?", method: "delete" } %>
-      <%= link_to "Edit", edit_lesson_path(lesson) %>
+      <%= link_to lesson.name, lesson_path(lesson) %>
+      <span style="float: right"><%= link_to "Delete", lesson_path(lesson), data: {confirm: "YOU SURE DAWG?", method: "delete" } %>
+      | <%= link_to "Edit", edit_lesson_path(lesson) %></span>
       </li>
   <% end %>
-
 </ul>
+</div>

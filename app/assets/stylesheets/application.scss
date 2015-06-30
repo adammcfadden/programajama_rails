@@ -15,3 +15,16 @@
    padding: 0px;
    width: 100%;
  }
+
+ .lesson-li {
+   display: none;
+ }
+
+ .section-name{
+   color: darkblue;
+ }
+
+ .section-name:hover{
+   cursor: pointer;
+   color: darkred;
+ }

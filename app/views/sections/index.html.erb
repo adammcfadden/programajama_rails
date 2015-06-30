@@ -1,14 +1,29 @@
 <% content_for(:title, "PROGRAMAJAMA")  %>
 <h1>Sections</h1>
 
-<ul>
+<div class="panel panel-default">
+
+<ul class="list-group">
 
   <% @sections.each do |section| %>
-    <li>
-      <%= link_to section.name, section_path(section) %> -
-      <%= link_to "Delete", section_path(section), data: {confirm: "YOU SURE DAWG?", method: "delete" } %>
-      <%= link_to "Edit", edit_section_path(section) %>
+    <li class="list-group-item section" id="section<%= section.id %>">
+      <span class="section-name" data-toggle="collapse" data-target=".section<%=section.id%>"><%= section.name %></span>
+      <!-- <%= link_to section.name, section_path(section) %> -->
+      <span style="float: right"><%= link_to "Delete", section_path(section), data: {confirm: "YOU SURE DAWG?", method: "delete" } %>
+      | <%= link_to "Edit", edit_section_path(section) %></span>
       </li>
+
+      <ul class="sectionLessons">
+
+      <% section.lessons.each do |lesson| %>
+        <li class="section<%=section.id%> lesson-li collapse">
+            <%= link_to lesson.name, lesson_path(lesson) %>
+        </li>
+      <% end %>
+
+      </ul>
+
   <% end %>
 
 </ul>
+</div>
