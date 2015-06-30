@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title><%= yield(:title) %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <div class="container">
-    <%= yield %>
-  </div>
-  <div class="text-center">
-    <%= flash[:alert] %>
-  </div>
-  <nav class='navbar navbar-default' role='navigation' id="nav-footer">
-    <ul class='nav navbar-nav'>
-      <li><%= link_to "Lessons", lessons_path %></li>
-      <li><%= link_to "Sections", sections_path %></li>
-      <li><%= link_to "Add Lesson", new_lesson_path %></li>
-      <li><%= link_to "Add Section", new_section_path %></li>
-    </ul>
-  </nav>
-</body>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class="text-center">
+      <%= flash[:alert] %>
+    </div>
+    <nav class='navbar navbar-default' role='navigation' id="nav-footer">
+      <ul class='nav navbar-nav'>
+        <li><%= link_to "Lessons", lessons_path %></li>
+        <li><%= link_to "Add Lesson", new_lesson_path %></li>
+        <li><%= link_to "Sections", sections_path %></li>
+        <li><%= link_to "Add Section", new_section_path %></li>
+      </ul>
+    </nav>
+  </body>
 </html>

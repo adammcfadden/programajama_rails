@@ -5,11 +5,18 @@ class LessonsController < ApplicationController
 
   def new
     @lesson = Lesson.new
+    sections = Section.all
+    @section_option_array = []
+    sections.each do |section|
+      @section_option_array.push([section.name, section.id])
+    end
   end
 
   def create
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
+      section = Section.find(params[:section_id])
+      section.lessons.push(@lesson)
       flash[:alert] = "YOU MADE A LESSON, WAY TO GO FRIEND"
       redirect_to lessons_path
     else
