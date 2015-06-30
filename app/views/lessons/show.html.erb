@@ -14,4 +14,8 @@
       Lesson <%= @lesson.order_number %>
     </p>
   </div>
+
+  @lesson.section.lessons
+
+  <%= link_to "Next Lesson", lesson_path(@lesson.next) %>
 </div>
