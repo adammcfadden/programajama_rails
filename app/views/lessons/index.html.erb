@@ -4,7 +4,7 @@
 <ul>
 
   <% @lessons.each do |lesson| %>
-    <li><%= link_to lesson.name, lessons_path(lesson) %></li>
+    <li><%= link_to lesson.name, lesson_path(lesson) %></li>
   <% end %>
 
 </ul>
