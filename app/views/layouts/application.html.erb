@@ -7,11 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="text-center">
-    <%= flash[:alert] %>
-  </div>
+
   <div class="container">
     <%= yield %>
+  </div>
+  <div class="text-center">
+    <%= flash[:alert] %>
   </div>
   <nav class='navbar navbar-default' role='navigation' id="nav-footer">
     <ul class='nav navbar-nav'>

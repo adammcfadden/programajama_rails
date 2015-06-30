@@ -4,7 +4,11 @@
 <ul>
 
   <% @lessons.each do |lesson| %>
-    <li><%= link_to lesson.name, lesson_path(lesson) %></li>
+    <li>
+      <%= lesson.order_number %> -
+      <%= link_to lesson.name, lesson_path(lesson) %> -
+      <%= link_to "Delete", lesson_path(lesson), data: {confirm: "YOU SURE DAWG?", method: "delete" } %>
+      </li>
   <% end %>
 
 </ul>
