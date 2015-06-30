@@ -22,5 +22,20 @@ class Lesson < ActiveRecord::Base
     return self
   end
 
+  def previous
+    # find all lessons where section id is the same
+    lessons_array = []
+    Lesson.where(section_id: self.section_id).find_each do |lesson|
+      lessons_array.push(lesson)
+    end
+    #   of those, find lesson with order number + 1 and return
+    lessons_array.each do |lesson|
+      if lesson.order_number == self.order_number - 1
+        return lesson
+      end
+    end
+    return self
+  end
+
 
 end
