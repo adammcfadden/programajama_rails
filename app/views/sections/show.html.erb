@@ -3,6 +3,6 @@
 <h1><%= @section.name %></h1>
 <% @section.lessons.each do |lesson| %>
   <p>
-<%= lesson.name %>
+<%= link_to lesson.name, lesson_path(lesson) %>
   </p>
 <% end %>
