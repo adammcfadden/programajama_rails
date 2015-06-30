@@ -1,14 +1,24 @@
 <%= render "layouts/errors", object: @lesson %>
+<div class="text-center">
 
 <%= form_for @lesson do |l| %>
-<%= l.label :name %>
-<%= l.text_field :name %>
-<%= l.label :body %>
-<%= l.text_field :body %>
-<%= l.label :order_number %>
-<%= l.text_field :order_number %>
-<%= l.submit %>
 
-<%= select_tag(:section_id, options_for_select(@section_option_array)) %>
+<%= l.label :name %>
+<%= l.text_field :name, :class => "form-control" %>
+
+<%= l.label :body  %>
+<%= l.text_area :body, :class => "form-control"%>
+
+<%= l.label :video %>
+<%= l.text_field :video, :class => "form-control" %>
+
+<%= l.label :order_number %>
+<%= l.text_field :order_number, :class => "form-control" %>
+
+<%= l.label :section_id %>
+<%= select_tag(:section_id, options_for_select(@section_option_array), :class => "form-control") %>
+<br>
+<%= l.submit :class => "btn btn-large"  %>
+</div>
 
 <% end %>
